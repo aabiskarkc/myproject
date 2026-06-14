@@ -1,30 +1,30 @@
 <?php
 
-namespace App\Filament\Resources\Abouts\Tables;
+namespace App\Filament\Resources\Contacts\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class AboutsTable
+class ContactsTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                \Filament\Tables\Columns\TextColumn::make('education')
+                TextColumn::make('label')
+                    ->searchable()
+                    ->sortable(),
+
+                TextColumn::make('value')
                     ->searchable(),
 
-                \Filament\Tables\Columns\TextColumn::make('location')
-                    ->searchable(),
-
-                \Filament\Tables\Columns\TextColumn::make('experience')
-                    ->searchable(),
+                TextColumn::make('link')
+                    ->limit(40),
             ])
-            ->filters([
-                //
-            ])
+            ->filters([])
             ->recordActions([
                 EditAction::make(),
             ])

@@ -4,12 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class About extends Model
+class Project extends Model
 {
     protected $fillable = [
+        'title',
         'description',
-        'education',
-        'location',
-        'experience',
+        'image',
+        'project_url',
+        'github_url',
     ];
 }

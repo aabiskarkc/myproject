@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources\Abouts\Schemas;
 
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
 class AboutForm
@@ -10,7 +12,18 @@ class AboutForm
     {
         return $schema
             ->components([
-                //
+                Textarea::make('description')
+                    ->required()
+                    ->columnSpanFull(),
+
+                TextInput::make('education')
+                    ->required(),
+
+                TextInput::make('location')
+                    ->required(),
+
+                TextInput::make('experience')
+                    ->required(),
             ]);
     }
 }

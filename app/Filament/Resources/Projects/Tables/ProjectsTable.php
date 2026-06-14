@@ -1,30 +1,32 @@
 <?php
 
-namespace App\Filament\Resources\Abouts\Tables;
+namespace App\Filament\Resources\Projects\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class AboutsTable
+class ProjectsTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                \Filament\Tables\Columns\TextColumn::make('education')
-                    ->searchable(),
+                TextColumn::make('title')
+                    ->searchable()
+                    ->sortable(),
 
-                \Filament\Tables\Columns\TextColumn::make('location')
-                    ->searchable(),
+                ImageColumn::make('image')
+                    ->label('Image'),
 
-                \Filament\Tables\Columns\TextColumn::make('experience')
-                    ->searchable(),
+                TextColumn::make('project_url')
+                    ->label('Project URL')
+                    ->limit(30),
             ])
-            ->filters([
-                //
-            ])
+            ->filters([])
             ->recordActions([
                 EditAction::make(),
             ])
