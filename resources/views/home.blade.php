@@ -219,7 +219,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        © {{ date('Y') }} My Portfolio. All Rights Reserved.
+        © {{ date('Y') }} My Portfolio.
     </footer>
 
 </body>

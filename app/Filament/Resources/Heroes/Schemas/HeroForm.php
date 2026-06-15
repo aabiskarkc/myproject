@@ -24,7 +24,11 @@ class HeroForm
 
                 FileUpload::make('profile_image')
                     ->image()
-                    ->directory('heroes'),
+                    ->disk('public')
+                    ->directory('heroes')
+                    ->visibility('public')
+                    ->fetchFileInformation(false)
+                    ->maxSize(5120),
             ]);
     }
 }

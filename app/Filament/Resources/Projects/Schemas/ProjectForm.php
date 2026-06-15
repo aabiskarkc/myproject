@@ -22,7 +22,11 @@ class ProjectForm
 
                 FileUpload::make('image')
                     ->image()
-                    ->directory('projects'),
+                    ->disk('public')
+                    ->directory('projects')
+                    ->visibility('public')
+                    ->fetchFileInformation(false)
+                    ->maxSize(5120),
 
                 TextInput::make('project_url')
                     ->label('Project URL')
