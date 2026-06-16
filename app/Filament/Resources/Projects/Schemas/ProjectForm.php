@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Projects\Schemas;
 
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
@@ -35,6 +36,14 @@ class ProjectForm
                 TextInput::make('github_url')
                     ->label('GitHub URL')
                     ->url(),
+
+                Select::make('status')
+                    ->options([
+                        'active' => 'Active',
+                        'inactive' => 'Inactive',
+                    ])
+                    ->default('inactive')
+                    ->required(),
             ]);
     }
 }

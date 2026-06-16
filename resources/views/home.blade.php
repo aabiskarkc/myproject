@@ -31,13 +31,19 @@
 
             <div class="hero-content">
 
-                @if($hero->profile_image)
-                    <img
-                        src="{{ asset('storage/' . $hero->profile_image) }}"
-                        class="profile-image"
-                        alt="Profile Image"
-                    >
-                @endif
+                <div class="profile-wrapper">
+                    @if($hero->profile_image)
+                        <img
+                            src="{{ asset('storage/' . $hero->profile_image) }}"
+                            class="profile-image"
+                            alt="{{ $hero->name }}"
+                        >
+                    @else
+                        <div class="profile-placeholder">
+                            {{ strtoupper(substr($hero->name, 0, 1)) }}
+                        </div>
+                    @endif
+                </div>
 
                 <h4>Hello, I'm</h4>
 

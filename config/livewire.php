@@ -129,8 +129,8 @@ return [
     */
 
     'temporary_file_upload' => [
-        'disk' => env('LIVEWIRE_TEMPORARY_FILE_UPLOAD_DISK', 'public'),
-        'rules' => null,
+        'disk' => env('LIVEWIRE_TEMPORARY_FILE_UPLOAD_DISK', 'local'),
+        'rules' => ['file', 'image', 'max:5120'],
         'directory' => 'livewire-tmp',
         'middleware' => null,
         'preview_mimes' => [                                  // Supported file types for temporary pre-signed file URLs...

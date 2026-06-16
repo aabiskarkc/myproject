@@ -55,6 +55,13 @@ body{
 
 .hero-content{
     max-width:700px;
+    margin:0 auto;
+}
+
+.profile-wrapper{
+    display:flex;
+    justify-content:center;
+    margin-bottom:20px;
 }
 
 .profile-image{
@@ -63,7 +70,21 @@ body{
     border-radius:50%;
     object-fit:cover;
     border:5px solid #2563eb;
-    margin-bottom:20px;
+    display:block;
+}
+
+.profile-placeholder{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    border:5px solid #2563eb;
+    background:#e5e7eb;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:72px;
+    font-weight:bold;
+    color:#2563eb;
 }
 
 .hero h4{

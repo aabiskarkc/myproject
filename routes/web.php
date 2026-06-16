@@ -8,10 +8,10 @@ use App\Models\Project;
 use App\Models\Skill;
 
 Route::get('/', function () {
-    $hero = Hero::first();
+    $hero = Hero::where('status', 'active')->first();
     $about = About::first();
     $skills = Skill::all();
-    $projects = Project::all();
+    $projects = Project::where('status', 'active')->get();
     $contacts = Contact::all();
 
     return view('home', compact('hero', 'about', 'skills', 'projects', 'contacts'));

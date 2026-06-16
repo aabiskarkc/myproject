@@ -11,5 +11,6 @@ class Hero extends Model
         'profession',
         'description',
         'profile_image',
+        'status',
     ];
 }
