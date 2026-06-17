@@ -12,6 +12,7 @@ class SkillsTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->defaultSort('percentage', 'desc')
             ->columns([
     \Filament\Tables\Columns\TextColumn::make('name')
         ->searchable(),

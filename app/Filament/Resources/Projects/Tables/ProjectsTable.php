@@ -9,6 +9,7 @@ use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
 
 class ProjectsTable
 {
@@ -37,6 +38,9 @@ class ProjectsTable
                     ->formatStateUsing(fn (string $state): string => ucfirst($state))
                     ->sortable(),
             ])
+            ->defaultSort(function (Builder $query): Builder {
+                return $query->orderBy('created_at', 'desc');
+            })
             ->filters([
                 SelectFilter::make('status')
                     ->options([
